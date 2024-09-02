@@ -1,0 +1,1 @@
+using PA_Insurance_SRV as service from '../../srv/cat-service';

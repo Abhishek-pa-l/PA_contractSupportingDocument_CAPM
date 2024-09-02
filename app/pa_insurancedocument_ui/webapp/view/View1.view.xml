@@ -1,0 +1,119 @@
+<mvc:View
+    controllerName="pa.insurancedocument.painsurancedocumentui.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m"
+    xmlns:f="sap.ui.layout.form"
+    xmlns:u="sap.ui.unified"
+>
+    <Page
+        id="page"
+        title="{i18n>title}"
+    >
+        <content>
+            <f:SimpleForm
+                id="SimpleFormChange35g4"
+                editable="true"
+                layout="ResponsiveGridLayout"
+                labelSpanXL="3"
+                labelSpanL="3"
+                labelSpanM="3"
+                labelSpanS="12"
+                adjustLabelSpan="false"
+                emptySpanXL="5"
+                emptySpanL="5"
+                emptySpanM="5"
+                emptySpanS="0"
+                columnsXL="1"
+                columnsL="1"
+                columnsM="1"
+                singleContainerFullSize="false"
+            >
+                <f:content>
+                    <Label text="Contract" />
+                    <Input
+                        showValueHelp="true"
+                        value="{formModel>/contract}"
+                        valueHelpRequest="onF4ContractNum"
+                        id="contract"
+                    />
+                    <Label text="Customer" />
+                    <Input
+                        id="customer"
+                        value="{formModel>/customer}"
+                    />
+                    <Label text="History" />
+                    <Input
+                        value="{formModel>/history}"
+                        id="history"
+                    />
+                    <Toolbar>
+                        <Text text="Insurance" />
+                    </Toolbar>
+                    <Label text="Validity Start" />
+                    <DatePicker
+                        id="validitystart"
+                        value="{formModel>/validityStart}"
+                    />
+                    <Label text="Expiry Date" />
+                    <DatePicker
+                        id="expirydate"
+                        value="{formModel>/expiryDate}"
+                    />
+                    <Label text="Date Of Submission" />
+                    <DatePicker
+                        id="submissiondate"
+                        value="{path:'formModel>/iDateOfSubmission', type: 'sap.ui.model.type.Date', formatOptions: { pattern: 'dd/MM/yyyy' }}"
+                    />
+                    <Label text="Upload Attachment" />
+                    <u:FileUploader
+                        id="fileUploader"
+                        name="myFileUpload"
+                        uploadUrl="upload/"
+                        change="onFileChange"
+                        tooltip="Upload your file to the local server"
+                        uploadComplete="handleUploadComplete"
+                    />
+                    <!-- <Button
+                        text="Upload File"
+                        press="handleUploadPress"
+                    /> -->
+
+                    <Toolbar>
+                        <Text text="Financial Guarantee" />
+                    </Toolbar>
+                    <Label text="Date Of Submission" />
+                    <DatePicker
+                        id="dos"
+                        value="{path:'formModel>/fDateOfSubmission', type: 'sap.ui.model.type.Date', formatOptions: { pattern: 'dd/MM/yyyy' }}"
+                    />
+                    <Label text="Upload Attachment" />
+                    <u:FileUploader
+                        id="fileUploader2"
+                        name="myFileUpload"
+                        uploadUrl="upload/"
+                        change="onFileChange"
+                        tooltip="Upload your file to the local server"
+                        uploadComplete="handleUploadComplete"
+                    />
+                    <!-- <Button
+                        text="Upload File"
+                        press="handleUploadPress"
+                    /> -->
+                </f:content>
+            </f:SimpleForm>
+        </content>
+        <footer>
+            <OverflowToolbar>
+                <Button
+                    text="Submit"
+                    press="onSave"
+                />
+                <!-- <Button
+                    text="dlt"
+                    press="onDlt"
+                /> -->
+            </OverflowToolbar>
+        </footer>
+    </Page>
+</mvc:View>
